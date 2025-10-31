@@ -1,0 +1,123 @@
+/* Variables de color */
+:root {
+    --primary: #ffbf00;      /* dorado */
+    --secondary: #4b2e00cc;  /* marrón oscuro */
+    --accent: #ffe4c4;       /* crema */
+    --text: #2b2b2b;
+    --white: #ffffff;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--accent);
+    color: var(--text);
+    line-height: 1.6;
+    padding-top: 80px;
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #4b3c1277;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 15px;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+nav {
+    background-color: var(--secondary);
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 15px;
+}
+
+nav a {
+    color: var(--primary);
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav a:hover {
+    color: white;
+}
+
+/* Encabezado */
+header {
+    background-color: var(--secondary);
+    padding: 40px 10px;
+    text-align: center;
+    color: var(--primary);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+/* Main */
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+main h3 {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    text-align: justify;
+    background: #fff3cd;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Botón del footer */
+footer {
+    text-align: center;
+    padding: 30px 10px;
+}
+
+footer button {
+    padding: 12px 25px;
+    font-size: 16px;
+    background-color: var(--primary);
+    color: var(--secondary);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+footer button:hover {
+    background-color: #e0a800;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    main h3 {
+        font-size: 1em;
+    }
+
+    footer button {
+        width: 90%;
+    }
+}

@@ -1,0 +1,135 @@
+/* Variables de color */
+:root {
+    --primary: #ffbf00;
+    --secondary: #5a3e11cc;
+    --accent: #ffe4c4;
+    --text: #2b2b2b;
+    --white: #ffffff;
+    --danger: #ff4d4d;
+    --danger-hover: #ff1a1a;
+}
+
+/* Reset */
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family:'Segoe UI', sans-serif;
+    background-color: var(--accent);
+    color: var(--text);
+    line-height:1.6;
+    padding-top: 80px;
+}
+
+.navbar {
+    position:fixed;
+    top:0; left:0; right:0;
+    background-color: var(--secondary);
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    padding:20px;
+    z-index:1000;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+.navbar a {
+    color: var(--primary);
+    font-weight:bold;
+    text-decoration:none;
+    font-size:18px;
+}
+
+.navbar a:hover { color:white; }
+
+header {
+    background-color: var(--secondary);
+    padding: 40px 10px;
+    text-align:center;
+    color: var(--primary);
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+header img {
+    width:180px; height:180px;
+    border-radius:50%;
+    object-fit:cover;
+    box-shadow:0 4px 12px rgba(0,0,0,0.3);
+    margin-top:20px;
+}
+
+main {
+    max-width:1000px;
+    margin:30px auto;
+    padding:20px;
+    text-align:center;
+}
+
+main h2 { font-size:1.8em; margin-bottom:15px; color: var(--secondary); }
+
+textarea {
+    width:90%; max-width:800px;
+    height:200px;
+    padding:15px;
+    font-size:1em;
+    border:2px solid var(--secondary);
+    border-radius:10px;
+    margin-top:10px;
+    resize: vertical;
+}
+
+footer {
+    text-align:center;
+    padding:30px 10px;
+}
+
+footer button,
+.boton-envio {
+    padding:12px 25px;
+    margin:10px;
+    font-size:16px;
+    background-color: var(--primary);
+    color: var(--secondary);
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+footer button:hover,
+.boton-envio:hover {
+    background-color:#e0a800;
+    transform:scale(1.05);
+}
+
+/* Botón eliminar "cool" */
+.boton-eliminar {
+    padding:6px 15px;
+    margin-left:10px;
+    font-size:14px;
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    color:white;
+    border:none;
+    border-radius:20px;
+    cursor:pointer;
+    font-weight:bold;
+    box-shadow: 0 4px 15px rgba(255, 65, 108, 0.4);
+    transition: all 0.3s ease;
+}
+
+.boton-eliminar:hover {
+    transform: scale(1.1) rotate(-2deg);
+    box-shadow: 0 6px 20px rgba(255,65,108,0.6);
+}
+
+/* Mensajes */
+.mensaje { margin-top:20px; color:green; font-weight:bold; }
+
+.comentarios-lista { list-style:none; margin-top:20px; text-align:left; }
+
+/* Responsividad */
+@media (max-width:768px){
+    textarea { width:95%; height:180px; }
+    footer button, .boton-envio { width:90%; }
+}

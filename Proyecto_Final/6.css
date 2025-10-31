@@ -1,0 +1,144 @@
+/* Variables de color */
+:root {
+    --primary: #ffbf00;      /* dorado */
+    --secondary: #4b2e00cc;  /* marrón oscuro */
+    --accent: #ffe4c4;       /* crema */
+    --text: #2b2b2b;
+    --white: #ffffff;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--accent);
+    color: var(--text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    flex-direction: column;
+}
+
+/* Contenedor principal */
+.login-container {
+    background-color: var(--white);
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-container h2 {
+    margin-bottom: 25px;
+    color: var(--secondary);
+    font-size: 2em;
+}
+
+/* Grupos de entrada */
+.input-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--secondary);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 2px solid var(--secondary);
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: var(--primary);
+}
+
+/* Botón de login */
+.login-btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: var(--primary);
+    color: var(--secondary);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.login-btn:hover {
+    background-color: #e0a800;
+    transform: scale(1.05);
+}
+
+/* Enlace para crear cuenta */
+.login-container a {
+    display: inline-block;
+    color: var(--secondary);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.login-container a:hover {
+    color: var(--primary);
+}
+
+/* Footer con botón */
+footer {
+    margin-top: 20px;
+    text-align: center;
+}
+
+footer button {
+    padding: 12px 25px;
+    font-size: 16px;
+    background-color: var(--primary);
+    color: var(--secondary);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+footer button:hover {
+    background-color: #e0a800;
+    transform: scale(1.05);
+}
+
+/* Responsividad */
+@media (max-width: 500px) {
+    .login-container {
+        padding: 30px 20px;
+    }
+
+    .login-container h2 {
+        font-size: 1.5em;
+    }
+
+    .login-btn {
+        font-size: 16px;
+    }
+}

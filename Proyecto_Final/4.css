@@ -1,0 +1,411 @@
+/* ======================
+   ESTILOS GENERALES
+====================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #fffaf1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: #2b2b2b;
+    position: relative;
+}
+
+/* ======================
+   HEADER
+====================== */
+header {
+    background-color: #ffbf00;
+    color: #4b2e00;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+/* ======================
+   MAIN / PRODUCTOS
+====================== */
+main {
+    flex: 1;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #4b2e00;
+}
+
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    background-color: #fff8dc;
+    border-radius: 12px;
+    width: 250px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+.card-head {
+    padding: 15px;
+    text-align: center;
+}
+
+.card-head h4 {
+    margin-bottom: 10px;
+    color: #4b2e00;
+}
+
+.card-head img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    background-color: #eee;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-body p {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.card-body input[type=number] {
+    width: 60px;
+    padding: 5px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.card-body button,
+footer button {
+    padding: 10px 20px;
+    background-color: #ffbf00;
+    color: #4b2e00;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.card-body button:hover,
+footer button:hover {
+    background-color: #e6aa00;
+    transform: scale(1.05);
+}
+
+footer {
+    padding: 20px;
+    background-color: #fff4c1;
+    text-align: center;
+}
+
+/* ======================
+   BOTÓN FLOTANTE DEL CARRITO
+====================== */
+#carrito-flotante {
+    position: fixed !important;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #ffbf00;
+    color: #2b2b2b;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    z-index: 9999;
+    transition: transform 0.2s, background-color 0.3s;
+    position: fixed;
+}
+
+#carrito-flotante:hover {
+    transform: scale(1.1);
+    background-color: #e0a800;
+}
+
+#contador-carrito {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: red;
+    color: #fff;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+#limpiar-carrito {
+    font-size: 14px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+/* ======================
+   MEDIA QUERIES
+====================== */
+@media (max-width: 768px) {
+    #container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+    }
+}
+/* ======================
+   ESTILOS GENERALES
+====================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #fffaf1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: #2b2b2b;
+}
+
+/* ======================
+   HEADER
+====================== */
+header {
+    background-color: #ffbf00;
+    color: #4b2e00;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* ======================
+   MAIN / PRODUCTOS
+====================== */
+main {
+    flex: 1;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #4b2e00;
+}
+
+/* Contenedor de tarjetas */
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Card individual */
+.card {
+    background-color: #fff8dc;
+    border-radius: 12px;
+    width: 250px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+.card-head {
+    padding: 15px;
+    text-align: center;
+}
+
+.card-head h4 {
+    margin-bottom: 10px;
+    color: #4b2e00;
+}
+
+.card-head img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    background-color: #eee;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-body p {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.card-body input[type=number] {
+    width: 60px;
+    padding: 5px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.card-body button,
+footer button {
+    padding: 10px 20px;
+    background-color: #ffbf00;
+    color: #4b2e00;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.card-body button:hover,
+footer button:hover {
+    background-color: #e6aa00;
+    transform: scale(1.05);
+}
+
+/* ======================
+   FOOTER
+====================== */
+footer {
+    padding: 20px;
+    background-color: #fff4c1;
+    text-align: center;
+}
+
+/* Botón flotante */
+#carrito-flotante {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #ffbf00;
+    color: #4b2e00;
+    border: none;
+    border-radius: 50%;
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+    z-index: 9999;
+}
+
+#carrito-flotante:hover {
+    transform: scale(1.1);
+    background-color: #e0a800;
+}
+
+#contador-carrito {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #4b2e00;
+    color: #fff;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    font-size: 13px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#limpiar-carrito {
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    font-size: 14px;
+    cursor: pointer;
+    color: red;
+    background-color: #fffaf1;
+    border-radius: 50%;
+    padding: 2px 4px;
+}
+#limpiar-carrito:hover { transform: scale(1.2); }
+
+/* Estilos del header */
+header {
+    width: 100%;
+}
+
+/* Navbar dentro del header */
+header .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--secondary);
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 15px;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos de la navegación dentro del header */
+header nav {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 15px;
+}
+
+/* Enlaces dentro de la navegación */
+header nav a {
+    color: var(--primary);
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Efecto hover en los enlaces */
+header nav a:hover {
+    color: white;
+}
+
+
+
