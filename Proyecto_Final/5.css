@@ -50,8 +50,8 @@ header {
 }
 
 header img {
-    width:180px; height:180px;
-    border-radius:50%;
+    width:150px; height:150px;
+    border-radius:20%;
     object-fit:cover;
     box-shadow:0 4px 12px rgba(0,0,0,0.3);
     margin-top:20px;

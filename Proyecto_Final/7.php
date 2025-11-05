@@ -3,12 +3,13 @@ session_start();
 require_once 'db.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $nombre = trim($_POST['nombre'] ?? '');
     $email = trim($_POST['email'] ?? '');
     $password = $_POST['password'] ?? '';
     $confirm = $_POST['confirm_password'] ?? '';
     $rol = $_POST['rol'] ?? 'user'; // Por defecto es user
 
-    if (empty($email) || empty($password) || empty($confirm)) {
+    if (empty($nombre) || empty($email) || empty($password) || empty($confirm)) {
         $_SESSION['error'] = 'Completa todos los campos.';
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $_SESSION['error'] = 'Correo no válido.';
@@ -17,6 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } elseif (strlen($password) < 6) {
         $_SESSION['error'] = 'La contraseña debe tener al menos 6 caracteres.';
     } else {
+        // Verificar si el correo ya existe
         $stmt = $mysqli->prepare("SELECT id FROM users WHERE email = ?");
         $stmt->bind_param('s', $email);
         $stmt->execute();
@@ -26,8 +28,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['error'] = 'El correo ya está registrado.';
         } else {
             $hash = password_hash($password, PASSWORD_DEFAULT);
-            $stmt = $mysqli->prepare("INSERT INTO users (email, password, rol) VALUES (?, ?, ?)");
-            $stmt->bind_param('sss', $email, $hash, $rol);
+            $avatar = 'uploads/default.png'; // ruta por defecto
+
+            // Insertar con nombre incluido
+            $stmt = $mysqli->prepare("INSERT INTO users (nombre, email, password, avatar, rol) VALUES (?, ?, ?, ?, ?)");
+            $stmt->bind_param('sssss', $nombre, $email, $hash, $avatar, $rol);
 
             if ($stmt->execute()) {
                 $_SESSION['success'] = 'Registro exitoso. Ya puedes iniciar sesión.';
@@ -63,6 +68,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <?php endif; ?>
 
     <form method="POST" action="7.php">
+      <div class="input-group">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+      </div>
       <div class="input-group">
         <label for="email">Correo:</label>
         <input type="email" id="email" name="email" required>

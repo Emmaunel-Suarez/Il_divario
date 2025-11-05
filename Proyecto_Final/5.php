@@ -71,7 +71,7 @@ try {
 
 <header>
     <h1>Comentarios</h1>
-    <img src="./img/WhatsApp_Image_2025-05-07_at_10.48.56_AM.jpeg" alt="">
+    <img src="./img/comentarios_png.png" alt="">
 </header>
 
 <main>
